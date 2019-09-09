@@ -2,6 +2,7 @@
 layout: post
 title:  "Setting up your GitHub Pages site with Jekyll"
 date:   2019-09-09 14:33:46 -0400
+categories: tech 
 tags: jekyll update github git
 ---
 
