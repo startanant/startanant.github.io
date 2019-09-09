@@ -49,3 +49,4 @@ git config --global user.email "user@email.com"`
 
 15. Your GitHub Pages site is now ready at
 `username.github.io`
+![Jekyll welcome page](jekyll_welcome.png)
