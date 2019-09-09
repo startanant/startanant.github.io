@@ -21,7 +21,7 @@
 title: START. HALF DONE.
 email: startanant@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  I'm Anant from Ontario, Canada and this is my blog. I'm an aspiring full stack developer, writer and adventurer trying my best to find meaning at the minimal.
+  I am Anant from Ontario, Canada and this is my blog. I'm an aspiring full stack developer, writer and adventurer trying my best to find meaning at the minimal.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: startanant
