@@ -1,4 +1,135 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-09T16:42:14-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">START. HALF DONE.</title><subtitle>I am Anant from Ontario, Canada and this is my blog. I'm an aspiring full stack developer, writer and adventurer trying my best to find meaning at the minimal.</subtitle><entry><title type="html">Setting up your GitHub Pages site with Jekyll</title><link href="http://localhost:4000/tech/2019/09/09/first-post.html" rel="alternate" type="text/html" title="Setting up your GitHub Pages site with Jekyll" /><published>2019-09-09T14:33:46-04:00</published><updated>2019-09-09T14:33:46-04:00</updated><id>http://localhost:4000/tech/2019/09/09/first-post</id><content type="html" xml:base="http://localhost:4000/tech/2019/09/09/first-post.html">&lt;ol&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-02T16:11:06-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">START. HALF DONE.</title><subtitle>I am Anant from Ontario, Canada and this is my blog. I'm an aspiring full stack developer, writer and adventurer, trying my best to find meaning in the least.</subtitle><entry><title type="html">A needle in a haystack: Part II</title><link href="http://localhost:4000/tech/2019/09/30/find-needles-2.html" rel="alternate" type="text/html" title="A needle in a haystack: Part II" /><published>2019-09-30T17:33:46-04:00</published><updated>2019-09-30T17:33:46-04:00</updated><id>http://localhost:4000/tech/2019/09/30/find-needles-2</id><content type="html" xml:base="http://localhost:4000/tech/2019/09/30/find-needles-2.html">&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: If you’re new to this series, start with the &lt;a href=&quot;/tech/2019/09/25/find-needle-1.html&quot;&gt;first post&lt;/a&gt; in the series for the sake of continuity.&lt;/p&gt;
+
+&lt;p&gt;In the previous scenario, we looked for a letter in a word. Now, let’s take it a step further and look for words in a sentence. You’ll see that the needle and haystack we discussed earlier, get a lot larger and complicated in this one (not nearly large enough to make it any easier to find the needle, though).&lt;/p&gt;
+
+&lt;p&gt;The needle is now an array of words, as is the haystack. To complicate things further, the output will also be - you guessed it - an array of words (plus a counter), as opposed to just being a boolean value of true or false.&lt;/p&gt;
+
+&lt;p&gt;We used JavaScript to explain the previous scenario. While we can continue using JavaScript for this scenrio too, let’s use Python this time, so that we can demonstrate our abilities as polyglots.&lt;/p&gt;
+
+&lt;p&gt;Here’s the code for this scenario. You might find it a bit daunting at first but we’ll break it down together.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;re&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findNeedles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;haystack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;needles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;needles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stderr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Too many words!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;countArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;needles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;[ &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;\'\t\n\b\f\r&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;]&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;haystack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;needles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;needles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;countArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;needles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;needles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;countArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+		
+&lt;span class=&quot;n&quot;&gt;haystack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;The quick brown dog jumped over the lazy dog&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;needles&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'The'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'fox'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'dog'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Haystack = &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;haystack&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Needles = &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;needles&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;findNeedles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;haystack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;needles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Save the above program to a file (let’s call it &lt;code class=&quot;highlighter-rouge&quot;&gt;find-needles.py&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;But, before we run the program and arrive at the output, let’s go over some of the Python modules, functions and programming constructs we have used in our code.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Import&lt;/strong&gt;: The Python code in one module gains access to the code in another module, by the process of importing it. The import statement combines two operations; first it searches for the named module, then it binds the results of that search to a name in the local scope. 
+For more information, see &lt;a href=&quot;https://docs.python.org/3/reference/import.html&quot;&gt;https://docs.python.org/3/reference/import.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In our scenario, &lt;code class=&quot;highlighter-rouge&quot;&gt;import re&lt;/code&gt; searches for the regular expression module and allows access to functions and attributes available in the &lt;code class=&quot;highlighter-rouge&quot;&gt;re&lt;/code&gt; module, in the local scope.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Regular Expressions&lt;/strong&gt;: A regular expression specifies a set of strings that matches it; the functions in this module let you check if a particular string matches a given regular expression (or if a given regular expression matches a particular string, which comes down to the same thing).
+For more information, see &lt;a href=&quot;https://docs.python.org/3/library/re.html&quot;&gt;https://docs.python.org/3/library/re.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;re.split(pattern, string)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here, the &lt;code class=&quot;highlighter-rouge&quot;&gt;split&lt;/code&gt; method available in the &lt;code class=&quot;highlighter-rouge&quot;&gt;re&lt;/code&gt; module breaks up the &lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt; by the occurrences of &lt;code class=&quot;highlighter-rouge&quot;&gt;pattern&lt;/code&gt; and returns a list as shown below.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;[ &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;\'\t\n\b\f\r&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;]&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;she sells sea shells&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'she'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'sells'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'sea'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'shells'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Try to figure out what this pattern is doing by running the above code in the Python interpreter. We will cover regular expressions in more detail in a future post. Stay tuned.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Range&lt;/strong&gt;: When you call the &lt;code class=&quot;highlighter-rouge&quot;&gt;range&lt;/code&gt; function with one argument, it returns a sequence of numbers that starts at 0 and includes every whole number up to, but not including, the number you have provided as the argument.
+For more information, see &lt;a href=&quot;https://docs.python.org/3/library/stdtypes.html#typesseq-range&quot;&gt;https://docs.python.org/3/library/stdtypes.html#typesseq-range&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;range(x)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;where, x is the number provided as the argument.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Nested For loops&lt;/strong&gt; :&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for i in range(len(needles)):
+      for j in range(len(words)):
+      	line 1
+      	line 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;During the first pass, for a given value of i assigned in the outer loop, the control passes to the inner loop,  which loops through lines 1,2.. etc to completion as many number of times for every value of j, while the value of i remains constant. The value of i changes in the next pass.&lt;/p&gt;
+
+&lt;p&gt;Okay. That much information should work for now. I’d rather not hand you the solution on a platter. Please write to me if you have any questions.&lt;/p&gt;
+
+&lt;p&gt;Let’s get back to our program.
+Run &lt;code class=&quot;highlighter-rouge&quot;&gt;find-needles.py&lt;/code&gt; from the terminal.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;python&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;needles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;py&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Haystack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;The&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;quick&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brown&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dog&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jumped&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;over&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lazy&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dog&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Needles&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'The'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'fox'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'dog'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;The&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;fox&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The output returned by the program is a list of needles (words), plus the number of occurrences of each needle (word), which we found in our haystack (sentence). We have successfully upgraded our pursuit of needles to match the increased complexity of the haystack.&lt;/p&gt;
+
+&lt;p&gt;Next time, we will find some more needles from another haystack; and maybe use a different language again.&lt;/p&gt;</content><author><name></name></author><category term="python" /><category term="javascript" /><category term="programming" /><summary type="html">Note: If you’re new to this series, start with the first post in the series for the sake of continuity.</summary></entry><entry><title type="html">A needle in a haystack: Part I</title><link href="http://localhost:4000/tech/2019/09/25/find-needle-1.html" rel="alternate" type="text/html" title="A needle in a haystack: Part I" /><published>2019-09-25T17:33:46-04:00</published><updated>2019-09-25T17:33:46-04:00</updated><id>http://localhost:4000/tech/2019/09/25/find-needle-1</id><content type="html" xml:base="http://localhost:4000/tech/2019/09/25/find-needle-1.html">&lt;p&gt;Why would someone hide a needle in a haystack? That answer is out of the scope of this tutorial. Just know that the haystack is out there and sometimes the thing you need is the needle; and sometimes, you’re the needle. Too much? Let’s stick to the task at hand.&lt;/p&gt;
+
+&lt;p&gt;Our mission is to check if an element (we’ll call it a “needle” for the purposes of this tutorial) is present in an array (we’ll label it “haystack”).&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;haystack = ['h','e','l','l','o']&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We refer to each element by its position in the array. For example,&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;haystack[1] = e&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s a simple function in JavaScript to find one needle (a letter) in a haystack (a word).&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;inArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;needle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;haystack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;haystack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;haystack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;needle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can try this out in the Chrome &lt;a href=&quot;https://developers.google.com/web/tools/chrome-devtools/console#javascript&quot;&gt;REPL&lt;/a&gt;.
+First, run the function and then call it by providing the parameters, where the first parameter is a “needle” of your choice and the second parameter is the “haystack” we defined earlier.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; inArray('e',haystack)
+&amp;lt; true
+&amp;gt; inArray('x',haystack)
+&amp;lt; false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;An &lt;code class=&quot;highlighter-rouge&quot;&gt;includes()&lt;/code&gt; method that is now standard in &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes&quot;&gt;ECMAScript 2016&lt;/a&gt; does the same thing - “determines whether an array includes a certain value among its entries”. Or, in plain English, looks for a needle in a haystack.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; haystack.includes('a')
+&amp;lt; false
+&amp;gt; haystack.includes('e')
+&amp;lt; true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="python" /><category term="javascript" /><category term="programming" /><summary type="html">Why would someone hide a needle in a haystack? That answer is out of the scope of this tutorial. Just know that the haystack is out there and sometimes the thing you need is the needle; and sometimes, you’re the needle. Too much? Let’s stick to the task at hand.</summary></entry><entry><title type="html">Setting up your GitHub Pages site with Jekyll</title><link href="http://localhost:4000/tech/2019/09/09/first-post.html" rel="alternate" type="text/html" title="Setting up your GitHub Pages site with Jekyll" /><published>2019-09-09T14:33:46-04:00</published><updated>2019-09-09T14:33:46-04:00</updated><id>http://localhost:4000/tech/2019/09/09/first-post</id><content type="html" xml:base="http://localhost:4000/tech/2019/09/09/first-post.html">&lt;ol&gt;
   &lt;li&gt;
     &lt;p&gt;On GitHub, create a new repository called &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt; (Follow steps 1-5 &lt;a href=&quot;https://help.github.com/en/articles/create-a-repo&quot;&gt;here&lt;/a&gt;. It is not necessary to initialize this repository with a README now. Click &lt;strong&gt;Create repository&lt;/strong&gt;.)&lt;/p&gt;
   &lt;/li&gt;
@@ -77,7 +208,7 @@
   &lt;li&gt;
     &lt;p&gt;Nothing else to see here. No more excuses. Read the &lt;a href=&quot;https://jekyllrb.com/docs/posts/&quot;&gt;docs&lt;/a&gt; and start blogging.&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><category term="github" /><category term="git" /><summary type="html">On GitHub, create a new repository called &amp;lt;username&amp;gt;.github.io (Follow steps 1-5 here. It is not necessary to initialize this repository with a README now. Click Create repository.)</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/2019/09/09/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2019-09-09T12:33:46-04:00</published><updated>2019-09-09T12:33:46-04:00</updated><id>http://localhost:4000/2019/09/09/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2019/09/09/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+&lt;/ol&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><category term="github" /><category term="git" /><summary type="html">On GitHub, create a new repository called &amp;lt;username&amp;gt;.github.io (Follow steps 1-5 here. It is not necessary to initialize this repository with a README now. Click Create repository.)</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/tech/2019/09/09/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2019-09-09T12:33:46-04:00</published><updated>2019-09-09T12:33:46-04:00</updated><id>http://localhost:4000/tech/2019/09/09/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/tech/2019/09/09/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
 
