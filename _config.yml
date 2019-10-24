@@ -19,13 +19,14 @@
 # in the templates via {{ site.myvariable }}.
 
 title: START. HALF DONE.
+author: Anant
 email: startanant@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   I am Anant from Ontario, Canada and this is my blog. I'm an aspiring full stack developer, writer and adventurer, trying my best to find meaning in the least.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: startanant
-github_username:  startanant
+url: "https://startanant.com/" # the base hostname & protocol for your site, e.g. http://example.com
+#twitter_username: startanant
+#github_username:  startanant
 
 # Build settings
 theme: minima
@@ -38,6 +39,16 @@ jekyll_analytics:
   GoogleAnalytics:          # Add, if you want to track with Google Analytics
     id: UA-148161975-1          # Required - replace with your tracking id
     anonymizeIp: false      # Optional - Default: false - set to true for anonymized tracking
+
+minima:
+  social_links:
+    twitter: startanant
+    github: startanant
+    instagram: startanant
+
+header_pages:
+  - about.md
+  - portfolio.md
 
 # Exclude from processing.
 # The following items will not be processed, by default.
