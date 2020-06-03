@@ -57,15 +57,15 @@ I also like to write about technology and break down complex topics into easily 
 
 **JavaScript**
 
-[A needle in a haystack: Part I]({{site.url}}/tech/2019/09/25/find-needle-1.html)
+[A needle in a haystack: Part I]({{site.url}}tech/2019/09/25/find-needle-1.html)
 
 **Python**
 
-[A needle in a haystack: Part II]({{site.url}}/tech/2019/09/30/find-needles-2.html)
+[A needle in a haystack: Part II]({{site.url}}tech/2019/09/30/find-needles-2.html)
 
 **GitHub**
 
-[Setting up your GitHub Pages with Jekyll]({{site.url}}/tech/2019/09/09/first-post.html)
+[Setting up your GitHub Pages with Jekyll]({{site.url}}tech/2019/09/09/first-post.html)
 
 ## Social Media
 When not working, I am found elsewhere on the internet, looking at cat pictures or posting images of a meal.
