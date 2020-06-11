@@ -13,4 +13,4 @@ My video covers a bit of theory and some easy to understand code. Do take a look
 
 [https://www.youtube.com/watch?v=ieST5yswzdA](https://www.youtube.com/watch?v=ieST5yswzdA)
 
-{% youtube ieST5yswzdA %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ieST5yswzdA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
