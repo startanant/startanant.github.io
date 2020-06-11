@@ -71,15 +71,15 @@ I also like to write about technology and break down complex topics into easily 
 ## Video
 
 I enjoy creating technical video content - beginner-friendly video tutorials featuring live coding in the terminal, IDE and browser.
-You check out my videos on YouTube.
+You can check out my videos on YouTube.
 
 [Promises in JavaScript](https://www.youtube.com/watch?v=ieST5yswzdA)
 
-<iframe width="320" height="190" src="https://www.youtube.com/embed/ieST5yswzdA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ieST5yswzdA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Basic Terminal Commands](https://www.youtube.com/watch?v=f7gOC_CY_H4)
 
-<iframe width="320" height="190" src="https://www.youtube.com/embed/f7gOC_CY_H4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f7gOC_CY_H4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## Social Media
