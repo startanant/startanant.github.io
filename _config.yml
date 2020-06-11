@@ -33,6 +33,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-analytics
+  - youtube
 
 # Jekyll Analytics
 jekyll_analytics:
