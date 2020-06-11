@@ -75,11 +75,11 @@ You check out my videos on YouTube.
 
 [Promises in JavaScript](https://www.youtube.com/watch?v=ieST5yswzdA)
 
-<iframe width="280" height="158" src="https://www.youtube.com/embed/ieST5yswzdA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="320" height="190" src="https://www.youtube.com/embed/ieST5yswzdA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Basic Terminal Commands](https://www.youtube.com/watch?v=f7gOC_CY_H4)
 
-<iframe width="280" height="158" src="https://www.youtube.com/watch?v=f7gOC_CY_H4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="320" height="190" src="https://www.youtube.com/embed/f7gOC_CY_H4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## Social Media
