@@ -67,6 +67,17 @@ I also like to write about technology and break down complex topics into easily 
 
 [Setting up your GitHub Pages with Jekyll]({{site.url}}tech/2019/09/09/first-post.html)
 
+
+## Video:
+
+I enjoy creating technical video content - beginner friendly tutorials featuring live coding in the terminal, IDE and browser.
+You check out my videos on YouTube.
+
+[Promises in JavaScript](https://www.youtube.com/watch?v=ieST5yswzdA)
+
+[Basic Terminal Commands](https://www.youtube.com/watch?v=f7gOC_CY_H4)
+
+
 ## Social Media
 When not working, I am found elsewhere on the internet, looking at cat pictures or posting images of a meal.
 
