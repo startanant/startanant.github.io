@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  "Video: Promises in JavaScript"
