@@ -80,9 +80,11 @@ You can check out my videos on YouTube.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ieST5yswzdA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
 [Scope in JavaScript](https://www.youtube.com/watch?v=ASCeQaSWSi4)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ASCeQaSWSi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 [Basic Terminal Commands](https://www.youtube.com/watch?v=f7gOC_CY_H4)
 
