@@ -50,3 +50,5 @@ An `includes()` method that is now standard in [ECMAScript 2016](https://develop
 > haystack.includes('e')
 < true
 ```
+
+Click here for the next post in the series. [A needle in a haystack: Part II]({{site.url}}tech/2019/09/30/find-needles-2.html)
