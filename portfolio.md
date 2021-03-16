@@ -22,7 +22,21 @@ When the master branch is updated, [AWS CodePipeline](https://aws.amazon.com/cod
 
 For source control, I use [GitHub](https://github.com/startanant).
 
-I've been working with JavaScript and the MERN (Mongo Express ReactJS NodeJS) stack lately. Here are some samples with live demos.
+I've been working with JavaScript, ReactJS and the MERN (Mongo Express ReactJS NodeJS) stack lately. Here are some samples with live demos.
+
+### 2. Google
+An exact replica of Google built using ReactJS.
+![Google](/assets/google.png)
+
+
+* [GitHub](https://github.com/startanant/google)
+
+* [Live Demo](https://clone-a2e9c.web.app/)
+
+* [YouTube Video Demo](https://youtu.be/z2xzdRRgTjk)
+
+
+* **Tools / languages**: ReactJS, Material UI, React Router, Google Custom Search API, Context API, Custom Hooks, Firebase
 
 ### 2. TaskMaster
 Keep your tasks organized with this project management tool/to-do list.
