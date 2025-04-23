@@ -6,7 +6,7 @@ categories: tech
 tags: json api programming
 ---
 
-## Financial Modeling Prep (FMP) – Free Stock Market API
+## Financial Modeling Prep (FMP) – Stock Market API
  
 
 Access real-time and historical stock data, financial statements, and market indices with a JSON-based REST API.<br>
