@@ -1,28 +1,42 @@
-
-# 💹 Financial Modeling Prep (FMP) – Free Stock Market API
-
-Access real-time and historical stock data, financial statements, and market indices with a JSON-based REST API.
-
+---
+layout: post
+title:  "Stock Market API"
+date:   2024-01-06 17:33:46 -0400
+categories: tech
+tags: json api programming
 ---
 
-## 🔗 Base URL
+# Financial Modeling Prep (FMP) – Free Stock Market API
+
+Access real-time and historical stock data, financial statements, and market indices with a JSON-based REST API.
+\
+
+---
+\
+\
+
+
+## Base URL
 
 ```
 https://financialmodelingprep.com/api/v3/
 ```
-
+\
 ---
+\
+\
 
-## 🔐 Authentication
+## Authentication
 
 You’ll need a free API key.  
-👉 [Get one here](https://financialmodelingprep.com/developer/docs/)
-
+[Get one here](https://financialmodelingprep.com/developer/docs/)
+\
 ---
+\
+\
+## Popular Endpoints (Free Tier)
 
-## ✅ Popular Endpoints (Free Tier)
-
-### 📊 1. Get Real-Time Quote
+### 1. Get Real-Time Quote
 
 **Endpoint:**
 
@@ -53,8 +67,9 @@ GET https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=YOUR_API_KEY
 ```
 
 ---
-
-### 🧾 2. Company Profile
+\
+\
+### 2. Company Profile
 
 **Endpoint:**
 
@@ -84,8 +99,9 @@ GET https://financialmodelingprep.com/api/v3/profile/MSFT?apikey=YOUR_API_KEY
 ```
 
 ---
-
-### 📈 3. Historical Price Data (Daily)
+\
+\
+###  3. Historical Price Data (Daily)
 
 **Endpoint:**
 
@@ -112,22 +128,25 @@ GET https://financialmodelingprep.com/api/v3/historical-price-full/GOOGL?seriety
 ```
 
 ---
-
-## 📋 Other Available Endpoints (Free Tier)
+\
+\
+## Other Available Endpoints (Free Tier)
 
 - `/stock-screener` – Filter stocks by market cap, price, etc.
 - `/gainers` and `/losers` – Top market movers
 - `/search` – Find companies by name or symbol
 
 ---
-
-## ⚙️ Usage & Rate Limits
+\
+\
+##  Usage & Rate Limits
 
 - **Free tier:** ~250 requests/day
 - Higher tiers available for increased limits
 
 ---
-
+\
+\
 ## 🛠️ Docs & Tools
 
 - [FMP API Documentation](https://financialmodelingprep.com/developer/docs)
