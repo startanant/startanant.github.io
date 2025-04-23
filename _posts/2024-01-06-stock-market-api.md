@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Stock Market API"
+title:  "API Documentation: Stock Market API"
 date:   2024-01-06 17:33:46 -0400
 categories: tech
 tags: json api programming
 ---
 
-# Financial Modeling Prep (FMP) – Free Stock Market API
+## Financial Modeling Prep (FMP) – Free Stock Market API
  
 
 Access real-time and historical stock data, financial statements, and market indices with a JSON-based REST API.<br>
