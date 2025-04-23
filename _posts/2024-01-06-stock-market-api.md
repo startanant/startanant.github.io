@@ -13,7 +13,7 @@ Access real-time and historical stock data, financial statements, and market ind
 
   
 ---
-<br>
+<br><br>
 
 
 ## Base URL
@@ -66,7 +66,7 @@ GET https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=YOUR_API_KEY
 ```
 
 ---
-
+<br><br>
 ### 2. Company Profile
 
 **Endpoint:**
@@ -134,7 +134,7 @@ GET https://financialmodelingprep.com/api/v3/historical-price-full/GOOGL?seriety
 
 ---
 <br><br>
-##  Usage & Rate Limits
+## ⚠️ Usage & Rate Limits
 
 - **Free tier:** ~250 requests/day
 - Higher tiers available for increased limits
