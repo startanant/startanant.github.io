@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  "API Documentation: OpenAI API"
@@ -36,7 +35,7 @@ Authorization: Bearer YOUR_API_KEY
 <br><br>
 ## Popular Endpoints
 
-### 💬 1. Chat Completions (GPT-4, GPT-3.5)
+### 1. Chat Completions (GPT-4, GPT-3.5)
 
 **Endpoint:**
 
